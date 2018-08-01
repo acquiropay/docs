@@ -11,8 +11,9 @@ module.exports = {
     },
     themeConfig: {
         displayAllHeaders: true,
-        sidebarDepth: 1,
+        sidebarDepth: 0,
         repo: 'acquiropay/docs',
+        lastUpdated: true,
         sidebar: [
             {
                 title: 'Платежный шлюз',

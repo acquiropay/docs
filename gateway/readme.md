@@ -4,9 +4,13 @@
 
 	POST
 
-## URL
+## Боевой URL
 
     https://gateway.acquiropay.com
+    
+## Тестовый URL
+
+    https://gateway.acqp.co/
     
 ## Процесс обработки данных
 
