@@ -1,10 +1,9 @@
-FROM node:alpine as build
+FROM node:9.11.1 as build
 
 RUN npm install -g vuepress
 
 WORKDIR /app
 COPY . /app
-RUN npm install
 RUN npm run build
 
 FROM nginx:stable

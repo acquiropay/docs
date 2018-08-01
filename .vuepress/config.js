@@ -1,10 +1,8 @@
 module.exports = {
     dest: "public",
     locales: {
-        // The key is the path for the locale to be nested under.
-        // As a special case, the default locale can use '/' as its path.
         '/': {
-            lang: 'ru-RU', // this will be set as the lang attribute on <html>
+            lang: 'ru-RU',
             title: 'AcquiroPay',
             description: 'Документация платежной системы AcquiroPay'
         },
@@ -30,6 +28,18 @@ module.exports = {
                     '/gateway/card-binding',
                     '/gateway/card-init',
                 ]
+            },
+            {
+                title: 'Платежная форма',
+                children: [
+                    '/checkout/',
+                ],
+            },
+            {
+                title: 'Мобильная коммерция',
+                children: [
+                    '/gateway-mcom/',
+                ],
             },
         ]
     }
