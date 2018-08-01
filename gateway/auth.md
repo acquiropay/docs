@@ -50,7 +50,22 @@
 
 ## Ответ
 
+### Описание возвращаемых данных
+
+| Название            | Тип    | Описание                                                                                             |
+|---------------------|--------|------------------------------------------------------------------------------------------------------|
+| payment_id          | string | Идентификатор платежа.                                                                               |
+| datetime            | string | Дата и время начала операции в текущем статусе по часовому поясу UTC в формате YYYY-MM-DD hh:mm:ssZ. |
+| status              | string | Состояние платежа (см. [справочник](/gateway/dictionary.md)).                                        |
+| pp_identity         | string | Идентификатор платежной системы.                                                                     |
+| cf                  | string | Свободное поле.                                                                                      |
+| cf2                 | string | Свободное поле 2.                                                                                    |
+| additional          | array  | Дополнительные параметры.                                                                            |
+| additional/secure3d | array  | Параметры для отправки на ACS банк-эмитента для авторизации через 3D-Secure.                         |
+
 ### Требуется 3DS авторизация
+
+#### Пример ответа
 
 ```xml
 <response>
@@ -76,23 +91,15 @@
 </response>
 ```
 
-#### Возможно списание без 3DS авторизации
+#### Описание параметров secure3d
 
-```xml
-<response>
-    <payment_id>b86ec39cc1194ee893df3cea27a98ec9</payment_id>
-    <status>OK</status>
-    <extended_id>910bcdbb2efa4b9c85ad32fefc0596bf</extended_id>
-    <extended_status>PREAUTHORIZATION</extended_status>
-    <transaction_status>PREAUTHORIZATION</transaction_status>
-    <datetime>2017-06-05 12:53:03+0000</datetime>
-    <duplicate>false</duplicate>
-    <additional>
-        <reestr_id></reestr_id>
-        <date_post></date_post>
-        <id>b86ec39cc1194ee893df3cea27a98ec9</id>
-        <pp_identity>card_visa</pp_identity>
-    </additional>
-</response>
-```
+| Название           | Тип    | Описание                                                                                 |
+|--------------------|--------|------------------------------------------------------------------------------------------|
+| auth-form          | string | URL страница ACS-авторизации банк-эмитента.                                              |
+| auth-form-method   | string | Необходимый тип запроса. GET/POST, если не задан, POST по умолчанию.                     |
+| retransmit         | array  | Параметры, которые необходимо передавать в банк-эмитент, в виде параметров HTTP запроса. |
+| retransmit/PaReq   | string | Параметр для отправки на ACS банк-эмитента.                                              |
+| retransmit/MD      | string | Параметр для отправки на ACS банк-эмитента.                                              |
+| retransmit/TermUrl | string | URL страницы, куда плательщик будет возвращён по результату 3D-Secure авторизации.       |
+
 

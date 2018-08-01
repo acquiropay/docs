@@ -19,6 +19,7 @@ module.exports = {
                 title: 'Платежный шлюз',
                 children: [
                     '/gateway/',
+                    '/gateway/dictionary',
                     '/gateway/auth',
                     '/gateway/complete-auth',
                     '/gateway/charge',
