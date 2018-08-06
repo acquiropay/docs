@@ -39,6 +39,10 @@ module.exports = {
                 title: 'Мобильная коммерция',
                 children: [
                     '/gateway-mcom/',
+                    '/gateway-mcom/dictionary',
+                    '/gateway-mcom/payment',
+                    '/gateway-mcom/status',
+                    '/gateway-mcom/refund',
                 ],
             },
         ]

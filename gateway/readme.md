@@ -2,15 +2,27 @@
 
 ## Метод запросов
 
-	POST
+```
+POST
+```
 
 ## Боевой URL
 
-    https://gateway.acquiropay.com
+```
+https://gateway.acquiropay.com
+```
     
 ## Тестовый URL
 
-    https://gateway.acqp.co/
+```
+https://gateway.acqp.co
+```
+    
+## Формат ответа
+
+```
+XML
+```    
     
 ## Процесс обработки данных
 
